@@ -19,10 +19,10 @@ public class Carro extends Veiculo {
 
     public String getCambio() { return cambio; }
     public void setCambio(String cambio) { this.cambio = cambio; }
-
+    
     @Override
     public double calcularValorAluguel(int dias) {
-        return 0; // implementar depois
+        return getValorDiaria() * dias;
     }
 }
 
