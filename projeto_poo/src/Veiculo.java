@@ -45,12 +45,27 @@ abstract class Veiculo implements Alugavel{
 
     // metodos da interface
     @Override
-    public void alugar() {}
+    public void alugar() {
+        if (!disponivel) {
+            System.out.println("O veículo já está alugado.");
+        } else {
+            disponivel = false;
+            System.out.println("Veículo alugado com sucesso!");
+        }
+    }
 
     @Override
-    public void devolver() {}
-
+    public void devolver() {
+        if (disponivel) {
+            System.out.println("O veículo não está alugado.");
+        } else {
+            disponivel = true;
+            System.out.println("Veículo devolvido com sucesso!");
+        }
+    }
+    
     // Método abstrato obrigatório
     @Override
     public abstract double calcularValorAluguel(int dias);
 }
+
