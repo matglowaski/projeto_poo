@@ -16,10 +16,11 @@ public class Moto extends Veiculo {
     public void setTipo(String tipo) { this.tipo = tipo; }
     
     @Override
-    public double calcularAluguel(int dias) {
+    public double calcularValorAluguel(int dias) {
         return getValorDiaria() * dias;
     }
 }
+
 
 
 
