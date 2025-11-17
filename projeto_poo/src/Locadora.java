@@ -13,10 +13,49 @@ public class Locadora {
         this.clientes = new ArrayList<>();
     }
 
-    // metodos (vazios por enquanto)
-    public void cadastrarCliente(Cliente cliente) {}
-    public void adicionarVeiculo(Veiculo veiculo) {}
-    public void listarVeiculosDisponiveis() {}
-    public void alugarVeiculo(Cliente cliente, Veiculo veiculo, int dias) {}
-    public void devolverVeiculo(Cliente cliente, Veiculo veiculo) {}
+    public void cadastrarCliente(Cliente cliente) {
+        clientes.add(cliente);
+    }
+
+    public void adicionarVeiculo(Veiculo veiculo) {
+        veiculosDisponiveis.add(veiculo);
+    }
+
+    public void listarVeiculosDisponiveis() {
+        for (Veiculo v : veiculosDisponiveis) {
+            System.out.println(v.getNomeVeiculo() + " - " + v.getPlaca());
+        }
+    }
+
+    public void alugarVeiculo(Cliente cliente, Veiculo veiculo, int dias) {
+        if (!veiculosDisponiveis.contains(veiculo)) {
+            System.out.println("Esse veículo não tá disponível.");
+            return;
+        }
+
+        veiculo.alugar();
+        double valor = veiculo.calcularValorAluguel(dias);
+
+        System.out.println("Cliente: " + cliente.getNome());
+        System.out.println("Veículo: " + veiculo.getNomeVeiculo());
+        System.out.println("Valor total: R$ " + valor);
+
+        veiculosDisponiveis.remove(veiculo);
+        veiculosAlugados.add(veiculo);
+    }
+
+    public void devolverVeiculo(Cliente cliente, Veiculo veiculo) {
+        if (!veiculosAlugados.contains(veiculo)) {
+            System.out.println("Esse veículo nem tá alugado, fera.");
+            return;
+        }
+
+        veiculo.devolver();
+        veiculosAlugados.remove(veiculo);
+        veiculosDisponiveis.add(veiculo);
+
+        System.out.println("Devolução feita! Valeu, " + cliente.getNome());
+    }
 }
+
+
