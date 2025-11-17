@@ -14,12 +14,22 @@ public class Moto extends Veiculo {
 
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
-    
+
+    @Override
+    public void devolver() {
+        super.devolver();
+        if (isDisponivel()) {
+            System.out.println("Faça cheque rápido de óleo e pneus na devolução da moto.");
+        }
+    }
+
     @Override
     public double calcularValorAluguel(int dias) {
         return getValorDiaria() * dias;
     }
 }
+
+
 
 
 
