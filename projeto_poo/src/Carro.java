@@ -1,7 +1,7 @@
 public class Carro extends Veiculo {
     private int portas;
     private String tipoCombustivel;
-    private String cambio; //manual, automatico
+    private String cambio; // manual, automatico
 
     public Carro(String corVeiculo, String nomeVeiculo, String placa, String marca, String modelo,
                  double valorDiaria, int anoVeiculo, int portas, String tipoCombustivel, String cambio) {
@@ -19,10 +19,20 @@ public class Carro extends Veiculo {
 
     public String getCambio() { return cambio; }
     public void setCambio(String cambio) { this.cambio = cambio; }
-    
+
+    @Override
+    public void alugar() {
+        super.alugar();
+        if (!isDisponivel()) { 
+            System.out.println("Verifique seguro e documentos do carro antes da entrega.");
+        }
+    }
+
     @Override
     public double calcularValorAluguel(int dias) {
         return getValorDiaria() * dias;
     }
 }
+
+
 
