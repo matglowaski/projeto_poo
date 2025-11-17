@@ -1,4 +1,4 @@
-abstract class Veiculo implements Alugavel{
+public abstract class Veiculo implements Alugavel {
     private String corVeiculo;
     private String nomeVeiculo;
     private String placa;
@@ -43,7 +43,7 @@ abstract class Veiculo implements Alugavel{
     public boolean isDisponivel() { return disponivel; }
     public void setDisponivel(boolean disponivel) { this.disponivel = disponivel; }
 
-    // metodos da interface
+    // comportamento padrão — pode ser sobrescrito nas subclasses
     @Override
     public void alugar() {
         if (!disponivel) {
@@ -63,9 +63,18 @@ abstract class Veiculo implements Alugavel{
             System.out.println("Veículo devolvido com sucesso!");
         }
     }
-    
-    // Método abstrato obrigatório
+
+    // Método abstrato obrigatório para cálculo de valor
     @Override
     public abstract double calcularValorAluguel(int dias);
+
+    // para exibir info simples
+    @Override
+    public String toString() {
+        return String.format("%s %s - Placa: %s | Ano: %d | Diária: R$%.2f | Disponível: %s",
+                marca, modelo, placa, anoVeiculo, valorDiaria, disponivel ? "sim" : "não");
+    }
 }
+
+
 
