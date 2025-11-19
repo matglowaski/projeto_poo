@@ -1,7 +1,7 @@
 public class Carro extends Veiculo {
     private int portas;
     private String tipoCombustivel;
-    private String cambio; // manual, automatico
+    private String cambio; 
 
     public Carro(String corVeiculo, String nomeVeiculo, String placa, String marca, String modelo,
                  double valorDiaria, int anoVeiculo, int portas, String tipoCombustivel, String cambio) {

@@ -1,6 +1,6 @@
 public class Moto extends Veiculo {
     private int cilindradas;
-    private String tipo; //esportiva, naked
+    private String tipo; 
 
     public Moto(String corVeiculo, String nomeVeiculo, String placa, String marca, String modelo,
                 double valorDiaria, int anoVeiculo, int cilindradas, String tipo) {
