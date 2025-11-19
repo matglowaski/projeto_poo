@@ -1,0 +1,4 @@
+# formato: tipo,id,nome,email,senha,cpf,telefone
+CLIENTE,cli1,Matheus,matheus@email.com,1234,12345678900,(41)99999-9999
+FUNC,func1,Admin,admin@example.com,adminpwd
+FUNC,func_julio,Julio,julio@gmail.com,1234567

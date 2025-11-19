@@ -1,0 +1,3 @@
+# formato: placa,marca,modelo,ano,valorDiaria,nome,cor
+ABC1D23,VW,Golf,2018,150.0,Golf,Preto
+XYZ9Z88,Kawasaki,Ninja 300,2020,80.0,Ninja 300,Vermelha
